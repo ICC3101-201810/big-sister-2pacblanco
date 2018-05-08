@@ -19,6 +19,7 @@ namespace LabPOO
             {
                 Reto(cart, receta);
             }
+            else { Reto(cart, receta); }
         }
 
         public event BigSisterDelegate Reto;
@@ -33,7 +34,9 @@ namespace LabPOO
                     {
                         continue;
                     }
-                    else { cart.Remove(c); }
+                    else {
+                        Console.WriteLine("Retado por la hermana grande");
+                        cart.Remove(c); }
                 }
             }
 
