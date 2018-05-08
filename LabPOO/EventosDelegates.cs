@@ -8,23 +8,36 @@ namespace LabPOO
 {
     public class BigSister
     {
+        public BigSister()
+        {
+            Reto += new BigSisterDelegate(Remover);
+        }
         public delegate void BigSisterDelegate(List<Product> cart, List<Product> receta);
         public void Eliminar(List<Product> cart, List<Product> receta)
         {
-            foreach( Product c in cart)
+            if(cart.Count()>= receta.Count())
             {
-                foreach(Product r in receta)
+                Reto(cart, receta);
+            }
+        }
+
+        public event BigSisterDelegate Reto;
+
+        public void Remover(List<Product> cart,List<Product> receta)
+        {
+            foreach (Product c in cart)
+            {
+                foreach (Product r in receta)
                 {
-                    if(r.Name == c.Name)
+                    if (r.Name == c.Name)
                     {
                         continue;
                     }
                     else { cart.Remove(c); }
                 }
             }
-        }
 
-        public event BigSisterDelegate Reto;
+        }
 
 
 
