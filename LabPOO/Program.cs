@@ -15,9 +15,27 @@ namespace LabPOO
 
         static void Main(string[] args)
         {
+            BigSister p = new BigSister();
             cart = new List<Product>();
             market = new List<Product>();
+            receta = new List<Product>();
+            receta.Add(new Product("Leche Entera", 820, 89, "1L"));
+            receta.Add(new Product("Mantequilla", 850, 12, "125g"));
+            receta.Add(new Product("Pimienta", 430, 84, "15g"));
+            receta.Add(new Product("Sal Lobos", 330, 150, "1kg"));
+            receta.Add(new Product("Láminas de Lasaña", 1250, 85, "400g"));
+            receta.Add(new Product("Harina", 890, 43, "1kg"));
+            receta.Add(new Product("Tomate", 1290, 200, "1kg"));
+            receta.Add(new Product("Carne Molida", 4390, 15, "500g"));
+            receta.Add(new Product("Aceite de Oliva", 1790, 77, "250g"));
+            receta.Add(new Product("Queso Rallado Parmesano", 499, 102, "40g"));
+            receta.Add(new Product("Vino Blanco Caja", 2790, 84, "2L"));
+            receta.Add(new Product("Malla de Cebollas", 1090, 91, "1kg"));
+            receta.Add(new Product("Bolsa de Zanahorias", 890, 74, "1un"));
             SupplyStore();
+
+   
+
             while (true)
             {
                 PrintHeader();
@@ -60,7 +78,7 @@ namespace LabPOO
 
         public static void Pay()
         {
-            BigSister p = new BigSister();
+            
             PrintHeader();
             int total = 0;
             for (int i = 0; i < cart.Count; i++)
@@ -94,6 +112,7 @@ namespace LabPOO
                     {
                         continue;
                     }
+
                     AddToCart(market[answer]);
                     break;
                    
@@ -206,19 +225,7 @@ namespace LabPOO
             {
                 response = Console.ReadKey(true);
             }
-            receta.Add(new Product("Leche Entera", 820, 89, "1L"));
-            receta.Add(new Product("Mantequilla", 850, 12, "125g"));
-            receta.Add(new Product("Pimienta", 430, 84, "15g"));
-            receta.Add(new Product("Sal Lobos", 330, 150, "1kg"));
-            receta.Add(new Product("Láminas de Lasaña", 1250, 85, "400g"));
-            receta.Add(new Product("Harina", 890, 43, "1kg"));
-            receta.Add(new Product("Tomate", 1290, 200, "1kg"));
-            receta.Add(new Product("Carne Molida", 4390, 15, "500g"));
-            receta.Add(new Product("Aceite de Oliva", 1790, 77, "250g"));
-            receta.Add(new Product("Queso Rallado Parmesano", 499, 102, "40g"));
-            receta.Add(new Product("Vino Blanco Caja", 2790, 84, "2L"));
-            receta.Add(new Product("Malla de Cebollas", 1090, 91, "1kg"));
-            receta.Add(new Product("Bolsa de Zanahorias", 890, 74, "1un"));
+            
         }
 
     }

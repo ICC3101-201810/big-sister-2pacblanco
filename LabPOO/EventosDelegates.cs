@@ -15,11 +15,14 @@ namespace LabPOO
         public delegate void BigSisterDelegate(List<Product> cart, List<Product> receta);
         public void Eliminar(List<Product> cart, List<Product> receta)
         {
-            if(cart.Count()>= receta.Count())
+            if(cart.Count()<= receta.Count())
             {
                 Reto(cart, receta);
             }
-            else { Reto(cart, receta); }
+            else
+            {
+                Reto(cart, receta);
+            }
         }
 
         public event BigSisterDelegate Reto;
@@ -34,9 +37,12 @@ namespace LabPOO
                     {
                         continue;
                     }
-                    else {
+                    else
+                    {
                         Console.WriteLine("Retado por la hermana grande");
-                        cart.Remove(c); }
+                        cart.Remove(c);
+                        Console.ReadKey();
+                    }
                 }
             }
 
